@@ -1,5 +1,8 @@
 // Assignment code here
 
+// All possible characters allowed in password
+var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz0123456789!#$%&'()*+,-./:;<=>?@[]\^_`{|}~"
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
