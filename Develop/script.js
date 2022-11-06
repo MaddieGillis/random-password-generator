@@ -97,11 +97,19 @@ function writePassword() {
     console.log("num only");
 
   } else if (checkUpper !== true && checkLower !== true && checkNumbers !== true && checkSpecial) {
-    var userRequriements = specialCase;
+    var userRequirements = specialCase;
     console.log("special only");
 
   }
 
+  // write randomize function
+
+  for (i=0; i < passwordLength; i++) {
+    var finalRequirements = userRequirements[Math.floor(Math.random * passwordLength.length)];
+    var emptyPassword = [];
+    var finalPassword = emptyPassword.push(finalRequirements);
+    console.log(finalPassword);
+  }
 
   
 }
