@@ -111,10 +111,10 @@ function writePassword() {
     var finalRequirements = userRequirements[Math.floor(Math.random() * userRequirements.length)];
     var emptyPassword = [];
     var finalPassword = emptyPassword.push(finalRequirements);
-    console.log(finalPassword);
+    console.log(finalRequirements);
   }
 
-  var password = emptyPassword.join("");
+  var password = finalPassword;
   console.log(password);
   return password;
   }  
