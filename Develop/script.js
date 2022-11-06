@@ -121,5 +121,5 @@ function writePassword() {
 }
 
 // Add event listener to generate button
-document.addEventListener("click", writePassword); //tells button to run writePassword function, eventlistner allows for multiple uses for the same button
+generateBtn.addEventListener("click", writePassword); //tells button to run writePassword function, eventlistner allows for multiple uses for the same button
 
