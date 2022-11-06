@@ -11,7 +11,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  //var password = generatePassword();  //comment out while testing functions
+  var password = generatePassword();  //comment out while testing functions
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
@@ -25,8 +25,11 @@ function writePassword() {
 
 
   //window prompts to confirm user's requirements
+
+  function generatePassword () {
   var passwordLength = prompt("How many characters do you need?");
 
+ 
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Please enter a number between 8-128.")
   } else if  (passwordLength >= 8 && passwordLength <= 128) {
@@ -97,13 +100,24 @@ function writePassword() {
     console.log("num only");
 
   } else if (checkUpper !== true && checkLower !== true && checkNumbers !== true && checkSpecial) {
-    var userRequriements = specialCase;
+    var userRequirements = specialCase;
     console.log("special only");
 
   }
 
+  // write randomize function
 
-  
+  for (i=0; i < passwordLength; i++) {
+    var finalRequirements = userRequirements[Math.floor(Math.random() * userRequirements.length)];
+    var emptyPassword = [];
+    var finalPassword = emptyPassword.push(finalRequirements);
+    console.log(finalPassword);
+  }
+
+  var password = emptyPassword.join("");
+  console.log(password);
+  return password;
+  }  
 }
 
 // Add event listener to generate button
