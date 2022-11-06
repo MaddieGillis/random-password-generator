@@ -23,6 +23,8 @@ function writePassword() {
     console.log("Try again");
   } */ //Test code
 
+
+  //window prompts to confirm user's requirements
   var passwordLength = prompt("How many characters do you need?");
 
   if (passwordLength < 8 || passwordLength > 128) {
@@ -33,10 +35,73 @@ function writePassword() {
     var checkNumbers = confirm("Do you require numbers?");
     var checkSpecial = confirm("Do you require special characters?");
   }
+ 
   
+  //Possible combonations of password requirements
   if (checkUpper !== true && checkLower !== true && checkNumbers !== true && checkSpecial !== true) {
     alert("Please click ok to at least one requirment.");
+  } else if (checkUpper && checkLower && checkNumbers && checkSpecial) {
+   var userRequirements = upperCase.concat(lowerCase, numCase, specialCase);
+    console.log("upper, lower, num, special"); //console logs are confirming each chosen case
+
+  } else if (checkUpper && checkLower && checkNumbers && checkSpecial !== true){
+   var userRequirements = upperCase.concat(lowerCase, numCase);
+   console.log("Upper, lower, num");
+
+  } else if (checkUpper && checkLower && checkNumbers !== true && checkSpecial) {
+    var userRequirements = upperCase.concat(lowerCase, specialCase);
+    console.log("upper, lower, special");
+
+  } else if (checkUpper && checkLower !== true && checkNumbers && checkSpecial) {
+    var userRequirements = upperCase.concat(numCase, specialCase);
+    console.log("upper, num, special");
+
+  } else if (checkUpper !== true && checkLower && checkNumbers && checkSpecial) {
+    var userRequirements = lowerCase.concat(numCase, specialCase);
+    console.log("lower, num, special");
+
+  } else if (checkUpper && checkLower && checkNumbers !== true && checkSpecial !== true) {
+    var userRequirements = upperCase.concat(lowerCase);
+    console.log("upper, lower");
+
+  } else if (checkUpper && checkLower !== true && checkNumbers && checkSpecial !== true) {
+    var userRequirements = upperCase.concat(numCase);
+    console.log("upper, num");
+
+  } else if (checkUpper && checkLower !== true && checkNumbers === false && checkSpecial) {
+    var userRequirements = upperCase.concat(specialCase);
+    console.log("upper, special");
+    
+  } else if (checkUpper !== true && checkLower && checkNumbers && checkSpecial !== true) {
+    var userRequirements = lowerCase.concat(numCase);
+    console.log("lower, num");
+
+  } else if (checkUpper !== true && checkLower && checkNumbers !== true && checkSpecial) {
+    var userRequirements = lowerCase.concat(specialCase);
+    console.log("lower, special");
+
+  } else if (checkUpper !== true && checkLower !== true && checkNumbers && checkSpecial) {
+    var userRequirements = numCase.concat(specialCase);
+    console.log("num, special");
+
+  } else if (checkUpper && checkLower !== true && checkNumbers !== true && checkSpecial !== true) {
+    var userRequirements = upperCase;
+    console.log("upper only");
+  
+  } else if (checkUpper !== true && checkLower && checkNumbers !== true && checkSpecial !== true) {
+    var userRequirements = lowerCase;
+    console.log("lower only");
+
+  } else if (checkUpper !== true && checkLower !== true && checkNumbers && checkSpecial !== true) {
+    var userRequirements = numCase;
+    console.log("num only");
+
+  } else if (checkUpper !== true && checkLower !== true && checkNumbers !== true && checkSpecial) {
+    var userRequriements = specialCase;
+    console.log("special only");
+
   }
+
 
   
 }
