@@ -106,15 +106,15 @@ function writePassword() {
   }
 
   // write randomize function
+  var emptyPassword = [];
 
   for (i=0; i < passwordLength; i++) {
     var finalRequirements = userRequirements[Math.floor(Math.random() * userRequirements.length)];
-    var emptyPassword = [];
     var finalPassword = emptyPassword.push(finalRequirements);
     console.log(finalRequirements);
   }
 
-  var password = finalPassword;
+  var password = emptyPassword.join("");
   console.log(password);
   return password;
   }  
